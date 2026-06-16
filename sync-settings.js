@@ -26,6 +26,14 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+function renderDisclaimer(value) {
+  const escaped = escapeHtml(value);
+  return escaped.replace(
+    /cureduchenne\.org/gi,
+    '<a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a>'
+  );
+}
+
 function writeFile(fileName, content) {
   fs.writeFileSync(path.join(root, fileName), content, 'utf8');
 }
@@ -41,14 +49,14 @@ const disclaimer = settings['disclaimer'] || 'We are not affiliated with CureDuc
 let indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 indexHtml = indexHtml.replace(/<span class="counter-value" id="donatedAmount">[\s\S]*?<\/span>/, `<span class="counter-value" id="donatedAmount">${escapeHtml(donatedAmount)}</span>`);
 indexHtml = indexHtml.replace(/<span id="carsRemoved">[\s\S]*?<\/span>/, `<span id="carsRemoved">${escapeHtml(carsRemoved)}</span>`);
-indexHtml = indexHtml.replace(/<p id="disclaimerText">[\s\S]*?<\/p>/, `<p id="disclaimerText">The donation counter on this page reflects the cumulative amount contributed so far. Update it as your total grows so visitors can see the real-world impact. We are not affiliated with CureDuchenne or any partner organization. Please also consider making an independent donation directly to <a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a>. We chose CureDuchenne because this disease has affected our family closely.</p>`);
+indexHtml = indexHtml.replace(/<p id="disclaimerText">[\s\S]*?<\/p>/, `<p id="disclaimerText">${renderDisclaimer(disclaimer)}</p>`);
 writeFile('index.html', indexHtml);
 
 let removeHtml = fs.readFileSync(path.join(root, 'remove.html'), 'utf8');
 removeHtml = removeHtml.replace(/<h1 id="removePageTitle">[\s\S]*?<\/h1>/, `<h1 id="removePageTitle">${escapeHtml(removePageTitle)}</h1>`);
 removeHtml = removeHtml.replace(/<p class="lede" id="removePageIntro">[\s\S]*?<\/p>/, `<p class="lede" id="removePageIntro">${escapeHtml(removePageIntro)}</p>`);
 removeHtml = removeHtml.replace(/<p class="card-note card-note--light" id="removePageNote">[\s\S]*?<\/p>/, `<p class="card-note card-note--light" id="removePageNote">${escapeHtml(removePageNote)}</p>`);
-removeHtml = removeHtml.replace(/<p class="disclaimer" id="removeDisclaimer">[\s\S]*?<\/p>/, `<p class="disclaimer" id="removeDisclaimer">${escapeHtml(disclaimer).replace(/\n/g, '<br>')}</p>`);
+removeHtml = removeHtml.replace(/<p class="disclaimer" id="removeDisclaimer">[\s\S]*?<\/p>/, `<p class="disclaimer" id="removeDisclaimer">${renderDisclaimer(disclaimer).replace(/\n/g, '<br>')}</p>`);
 writeFile('remove.html', removeHtml);
 
 console.log('Synced index.html and remove.html from settings.txt');
