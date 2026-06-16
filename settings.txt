@@ -1,6 +1,6 @@
 # Edit these values to update the homepage quickly.
-Cars Removed: 86
-Donated so far: $12,480.00
+Cars Removed: 0
+Donated so far: $100.00
 Remove Page Title: Tell us about the vehicle and where it is located.
 Remove Page Intro: Free pickup depends on the car's location. Share the details below so we can confirm availability, estimate the pickup, and move quickly.
 Remove Page Note: Use the condition and drivability fields to help us understand whether the car starts, drives, or needs towing.
