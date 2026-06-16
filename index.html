@@ -1,1 +1,106 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Car removal service that donates part of profits after expenses to CureDuchenne." />
+  <title>Cardo Notion | Car Removal with a Mission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Car removal with purpose</p>
+        <h1>Turn your unwanted car into support for families facing Duchenne.</h1>
+        <p class="lede">
+          We remove cars, and free pickup is available depending on the car's location. After
+          operating expenses, we donate a good amount of the profits to CureDuchenne at
+          <a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="remove.html">Remove my car</a>
+          <a class="button button-secondary" href="#impact">See our impact</a>
+        </div>
+
+        <ul class="trust-list" aria-label="Service highlights">
+          <li>Free quotes</li>
+          <li>Free pickup in select locations</li>
+          <li>Donation-backed mission</li>
+        </ul>
+      </div>
+
+      <aside class="impact-card" id="impact" aria-label="Donation total">
+        <p class="card-label">Donated so far</p>
+        <div class="counter-row">
+          <span class="currency">$</span>
+          <span class="counter-value" id="donatedAmount">12,480</span>
+        </div>
+        <p class="card-note">
+          This number is updated manually as profits are allocated after expenses.
+        </p>
+        <div class="mini-grid">
+          <div>
+            <strong>After expenses</strong>
+            <span>Profit-sharing model</span>
+          </div>
+          <div>
+            <strong>Beneficiary</strong>
+            <span>CureDuchenne</span>
+          </div>
+          <div>
+            <strong>Cars removed</strong>
+            <span id="carsRemoved">86</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-grid" id="remove-car">
+      <article class="panel">
+        <p class="section-tag">How it works</p>
+        <h2>Simple pickup, honest costs, meaningful impact.</h2>
+          <p>
+            We make the process straightforward: request a quote, confirm the car location,
+            schedule pickup, remove the car, cover the expenses of running the service, and direct a
+            good amount of the remaining profit to CureDuchenne.
+          </p>
+      </article>
+
+      <article class="panel panel-accent">
+        <p class="section-tag">Why it matters</p>
+        <h2>Every eligible vehicle helps move money toward research and support.</h2>
+        <p>
+          Your old car becomes more than a junk removal task. It becomes a channel for support,
+          helping families and research efforts connected to Duchenne muscular dystrophy while we
+          keep a fair share to cover the business. Free removal depends on location.
+        </p>
+      </article>
+    </section>
+
+    <section class="mission-band">
+      <div>
+        <p class="section-tag">Mission note</p>
+        <h2>We are committed to transparent giving.</h2>
+      </div>
+      <p id="disclaimerText">
+        The donation counter on this page reflects the cumulative amount contributed so far.
+        Update it as your total grows so visitors can see the real-world impact. We are not
+        affiliated with CureDuchenne or any partner organization. Please also consider making an
+        independent donation directly to <a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a>.
+        We chose CureDuchenne because this disease has affected our family closely.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>Supporting CureDuchenne via a good amount of donated profits after expenses.</p>
+      <p><a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a></p>
+    </footer>
+  </main>
+
+</body>
+</html>

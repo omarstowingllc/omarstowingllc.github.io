@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request free or location-based car removal and send vehicle details for pickup." />
+  <title>Cardo Notion | Remove My Car</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero hero--form">
+      <div class="hero-copy">
+        <p class="eyebrow">Remove my car</p>
+        <h1 id="removePageTitle">Tell us about the vehicle and where it is located.</h1>
+        <p class="lede" id="removePageIntro">
+          Free pickup depends on the car's location. Share the details below so we can confirm
+          availability, estimate the pickup, and move quickly.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-secondary" href="index.html">Back to home</a>
+        </div>
+      </div>
+
+      <aside class="impact-card form-note" aria-label="Pickup note">
+        <p class="card-label">Before you submit</p>
+        <p class="card-note card-note--light" id="removePageNote">
+          Use the condition and drivability fields to help us understand whether the car starts,
+          drives, or needs towing.
+        </p>
+        <p class="disclaimer" id="removeDisclaimer">
+          We are not affiliated with CureDuchenne or any partner organization. Please also
+          consider making an independent donation directly to
+          <a href="https://cureduchenne.org" target="_blank" rel="noreferrer">cureduchenne.org</a>.
+          We chose CureDuchenne because this disease has affected our family closely.
+        </p>
+      </aside>
+    </section>
+
+    <section class="form-section">
+      <div class="form-panel">
+        <form class="car-form" action="https://formsubmit.co/c72016e823c5eae783a99ddb5f0ad90a" method="POST">
+          <input type="hidden" name="_subject" value="New Car Removal Request — Cardo Notion" />
+          <input type="hidden" name="_captcha" value="true" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" />
+
+          <div class="form-grid form-grid--two">
+            <div class="field">
+              <label for="firstName">First name *</label>
+              <input id="firstName" name="first_name" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="lastName">Last name *</label>
+              <input id="lastName" name="last_name" type="text" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--two">
+            <div class="field">
+              <label for="phone">Phone number *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="location">Vehicle location *</label>
+            <input id="location" name="vehicle_location" type="text" placeholder="Street address, city, state, zip" autocomplete="street-address" required />
+          </div>
+
+          <div class="form-grid form-grid--three">
+            <div class="field">
+              <label for="year">Year *</label>
+              <input id="year" name="year" type="number" min="1900" max="2100" inputmode="numeric" required />
+            </div>
+            <div class="field">
+              <label for="make">Make *</label>
+              <input id="make" name="make" type="text" required />
+            </div>
+            <div class="field">
+              <label for="model">Model *</label>
+              <input id="model" name="model" type="text" required />
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--two">
+            <div class="field">
+              <label for="mileage">Mileage *</label>
+              <input id="mileage" name="mileage" type="number" min="0" inputmode="numeric" placeholder="Approximate miles" required />
+            </div>
+            <div class="field">
+              <label for="drivable">Drivability *</label>
+              <select id="drivable" name="drivability" required>
+                <option value="">Select one</option>
+                <option>Starts and drives</option>
+                <option>Starts, but does not drive</option>
+                <option>Does not start</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--two">
+            <div class="field">
+              <label for="condition">Condition *</label>
+              <select id="condition" name="condition" required>
+                <option value="">Select one</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+                <option>Needs towing</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="titleStatus">Title status</label>
+              <select id="titleStatus" name="title_status">
+                <option value="">Select one</option>
+                <option>Have title in hand</option>
+                <option>Title available soon</option>
+                <option>No title</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notes">Additional notes</label>
+            <textarea id="notes" name="notes" rows="5" placeholder="Gate codes, keys, damage, pickup timing, or anything else we should know."></textarea>
+          </div>
+
+          <button type="submit" class="button button-primary form-submit">Send request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
